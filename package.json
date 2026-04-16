@@ -1,7 +1,7 @@
 {
-    "name": "astro-netlify-platform-starter",
+    "name": "ravenflight.io",
     "type": "module",
-    "version": "0.1.0",
+    "version": "1.1.0",
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
