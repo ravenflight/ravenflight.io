@@ -1,19 +1,287 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Markdown from '../components/Markdown.astro';
 
-const explainer = `
-An Astro website can go way beyond static pages - on the right platform.
-
-Netlify supports not only [Streaming SSR](https://docs.astro.build/en/guides/server-side-rendering/#html-streaming) and fast [Edge Middleware](https://docs.astro.build/en/guides/middleware/), but also [on-demand revalidation](https://www.netlify.com/blog/cache-tags-and-purge-api-on-netlify/) and [stale-while-revalidate](https://www.netlify.com/blog/swr-and-fine-grained-cache-control/). 
-Any page or data can be rebuilt only when needed, without site visitors ever getting a performance hit.
-`;
 ---
 
-<Layout title="Welcome to Astro.">
-    <h1 class="mb-10">Netlify Platform Starter for Astro</h1>
-    <Markdown content={explainer} class="mb-10 text-lg" />
-    <p>
-        <a href="https://docs.netlify.com/frameworks/astro/" class="btn btn-lg sm:min-w-64">Read the Docs</a>
-    </p>
+<Layout title="RavenFlight - Consulting for Early-Stage Startups">
+    <!-- Hero Section -->
+    <section class="py-20 sm:py-32 flex flex-col justify-center gap-8">
+        <div class="space-y-4">
+            <h1>Build Your Competitive Edge</h1>
+            <p class="text-xl sm:text-2xl text-gray-300 max-w-2xl">
+                RavenFlight helps early-stage startups accelerate growth through expert website development, digital marketing, business strategy, and hiring pipeline support.
+            </p>
+        </div>
+        <div>
+            <a href="#intake" class="btn btn-lg sm:min-w-80">Let's Talk About Your Vision</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 sm:py-32 space-y-12">
+        <div class="space-y-4">
+            <h2>How We Help Startups</h2>
+            <p class="text-lg text-gray-300">We combine technical expertise with strategic thinking to solve the problems that matter most at your stage.</p>
+        </div>
+
+        <div class="grid gap-8 sm:grid-cols-2">
+            <!-- Website Development -->
+            <div class="p-8 rounded-lg border border-gray-800 hover:border-primary/50 transition space-y-4">
+                <h3 class="text-xl font-semibold text-primary">Website Development</h3>
+                <p class="text-gray-300">
+                    Fast, modern websites that convert. We build on proven frameworks and design for your users—not for complexity. Your site becomes a lead generation machine.
+                </p>
+            </div>
+
+            <!-- Digital Marketing -->
+            <div class="p-8 rounded-lg border border-gray-800 hover:border-primary/50 transition space-y-4">
+                <h3 class="text-xl font-semibold text-primary">Digital Marketing</h3>
+                <p class="text-gray-300">
+                    Strategy and execution that brings the right customers to you. From SEO to paid channels, we focus on metrics that matter to your bottom line.
+                </p>
+            </div>
+
+            <!-- Business Advising -->
+            <div class="p-8 rounded-lg border border-gray-800 hover:border-primary/50 transition space-y-4">
+                <h3 class="text-xl font-semibold text-primary">Business Advising</h3>
+                <p class="text-gray-300">
+                    Experienced guidance on product-market fit, positioning, go-to-market strategy, and the decisions that determine success at your stage.
+                </p>
+            </div>
+
+            <!-- Hiring Pipeline Support -->
+            <div class="p-8 rounded-lg border border-gray-800 hover:border-primary/50 transition space-y-4">
+                <h3 class="text-xl font-semibold text-primary">Hiring Pipeline Support</h3>
+                <p class="text-gray-300">
+                    Help recruiting and retaining the talent that builds your company. From job descriptions to interview process design, we guide you through growth hiring.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why RavenFlight Section -->
+    <section class="py-20 sm:py-32 space-y-8">
+        <h2>Why Startups Choose RavenFlight</h2>
+        <div class="space-y-6 text-lg text-gray-300">
+            <p>
+                <strong class="text-primary">We think like founders.</strong> We've seen what works and what doesn't. We give you honest counsel focused on your long-term success, not quick wins.
+            </p>
+            <p>
+                <strong class="text-primary">We execute fast.</strong> In a startup, speed matters. We combine strategic thinking with the ability to ship quickly and iterate based on real feedback.
+            </p>
+            <p>
+                <strong class="text-primary">We go deep.</strong> Whether it's your website, your marketing, your hiring strategy, or your business model, we dig in and understand your constraints, opportunities, and vision.
+            </p>
+        </div>
+    </section>
+
+    <!-- Intake Form Section -->
+    <section id="intake" class="py-20 sm:py-32 space-y-8">
+        <div class="space-y-4 max-w-2xl">
+            <h2>Let's Get Started</h2>
+            <p class="text-lg text-gray-300">
+                Tell us about your startup and what you're looking to accomplish. We'll review what you share and get back to you within 24 hours to discuss the best way forward.
+            </p>
+        </div>
+
+        <form 
+            id="intake-form" 
+            action="/api/intake" 
+            method="POST" 
+            class="max-w-2xl space-y-6"
+        >
+            <div class="grid gap-6 sm:grid-cols-2">
+                <div class="space-y-2">
+                    <label for="name" class="block font-semibold">Your Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        required 
+                        class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white focus:border-primary focus:outline-none"
+                        placeholder="Jane Doe"
+                    />
+                </div>
+                <div class="space-y-2">
+                    <label for="email" class="block font-semibold">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        required 
+                        class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white focus:border-primary focus:outline-none"
+                        placeholder="jane@startup.com"
+                    />
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label for="company" class="block font-semibold">Company Name</label>
+                <input 
+                    type="text" 
+                    id="company" 
+                    name="company" 
+                    required 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white focus:border-primary focus:outline-none"
+                    placeholder="Your Startup Inc."
+                />
+            </div>
+
+            <div class="space-y-2">
+                <label for="industry" class="block font-semibold">Industry / What You Do</label>
+                <input 
+                    type="text" 
+                    id="industry" 
+                    name="industry" 
+                    required 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white focus:border-primary focus:outline-none"
+                    placeholder="E.g., SaaS for property management"
+                />
+            </div>
+
+            <div class="space-y-2">
+                <label for="services" class="block font-semibold">What brings you here? (Select all that apply)</label>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <input type="checkbox" id="web" name="services" value="website-development" class="w-4 h-4 rounded cursor-pointer" />
+                        <label for="web" class="ml-3 cursor-pointer">Website development or redesign</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="marketing" name="services" value="digital-marketing" class="w-4 h-4 rounded cursor-pointer" />
+                        <label for="marketing" class="ml-3 cursor-pointer">Digital marketing strategy / execution</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="strategy" name="services" value="business-advising" class="w-4 h-4 rounded cursor-pointer" />
+                        <label for="strategy" class="ml-3 cursor-pointer">Business strategy & advising</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="hiring" name="services" value="hiring-support" class="w-4 h-4 rounded cursor-pointer" />
+                        <label for="hiring" class="ml-3 cursor-pointer">Hiring pipeline & talent strategy</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-2">
+                <label for="timeline" class="block font-semibold">What's your timeline?</label>
+                <select 
+                    id="timeline" 
+                    name="timeline" 
+                    required 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white focus:border-primary focus:outline-none"
+                >
+                    <option value="">Select a timeline</option>
+                    <option value="immediate">Immediate (next 2 weeks)</option>
+                    <option value="month">This month</option>
+                    <option value="quarter">Next quarter</option>
+                    <option value="exploring">Just exploring</option>
+                </select>
+            </div>
+
+            <div class="space-y-2">
+                <label for="context" class="block font-semibold">Tell us more about what you're trying to accomplish</label>
+                <textarea 
+                    id="context" 
+                    name="context" 
+                    rows="5" 
+                    class="w-full px-4 py-3 rounded-lg bg-gray-900 border border-gray-800 text-white focus:border-primary focus:outline-none resize-none"
+                    placeholder="Share your biggest challenge, what you're building, your current stage, or anything else that helps us understand your situation..."
+                ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-lg w-full sm:w-auto">Send My Info</button>
+        </form>
+
+        <div id="intake-message"></div>
+
+        <p class="text-sm text-gray-400 max-w-2xl">
+            We respect your inbox. We'll review what you share and get back to you directly—no spam, no pressure.
+        </p>
+    </section>
 </Layout>
+
+<script>
+    // Form submission handler
+    interface IntakeFormResponse {
+      success: boolean;
+      message: string;
+      error?: string;
+    }
+
+    const handleIntakeFormSubmit = async (e: SubmitEvent) => {
+      const form = e.target as HTMLFormElement;
+      const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+      const messageDiv = document.getElementById('intake-message');
+
+      try {
+        submitButton.disabled = true;
+        submitButton.textContent = 'Sending...';
+
+        const formData = new FormData(form);
+        const response = await fetch('/api/intake', {
+          method: 'POST',
+          body: formData,
+        });
+
+        const data: IntakeFormResponse = await response.json();
+
+        if (!response.ok) {
+          throw new Error(data.error || 'Something went wrong');
+        }
+
+        // Success!
+        form.reset();
+        submitButton.textContent = 'Sent! 🎉';
+        submitButton.disabled = true;
+
+        if (messageDiv) {
+          messageDiv.innerHTML = `
+            <div class="p-4 rounded-lg bg-green-900/30 border border-green-700 text-green-200">
+              <p class="font-semibold">${data.message}</p>
+              <p class="text-sm mt-2">Check your email for confirmation.</p>
+            </div>
+          `;
+        }
+
+        // Reset button after 3 seconds
+        setTimeout(() => {
+          submitButton.textContent = 'Send My Info';
+          submitButton.disabled = false;
+        }, 3000);
+      } catch (error) {
+        const errorMessage = error instanceof Error ? error.message : 'An error occurred';
+
+        if (messageDiv) {
+          messageDiv.innerHTML = `
+            <div class="p-4 rounded-lg bg-red-900/30 border border-red-700 text-red-200">
+              <p class="font-semibold">Oops!</p>
+              <p class="text-sm mt-2">${errorMessage}</p>
+            </div>
+          `;
+        }
+
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send My Info';
+      }
+    };
+
+    // Initialize form handler when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        const form = document.getElementById('intake-form') as HTMLFormElement;
+        if (form) {
+          form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            handleIntakeFormSubmit(e);
+          });
+        }
+      });
+    } else {
+      const form = document.getElementById('intake-form') as HTMLFormElement;
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          handleIntakeFormSubmit(e);
+        });
+      }
+    }
+</script>
