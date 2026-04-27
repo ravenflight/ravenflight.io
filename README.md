@@ -1,5 +1,7 @@
 # ravenflight.io
 
+Business consulting site
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6f515a10-2f2f-4a07-98b2-ac724eb174dc/deploy-status)](https://app.netlify.com/projects/ravenflight-io/deploys)
 
 ## Pre-reqs

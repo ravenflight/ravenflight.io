@@ -1,3 +1,7 @@
 [build]
   publish = "dist"
   command = "bun run build"
+
+# Form handling configuration
+[form]
+  enabled = true
