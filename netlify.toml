@@ -1,3 +1,6 @@
+[Settings]
+ID = "6f515a10-2f2f-4a07-98b2-ac724eb174dc"
+
 [build]
   publish = "dist"
   command = "bun run build"
